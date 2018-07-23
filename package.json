@@ -6,10 +6,12 @@
   "author": "Brooks Benson <brooksbenson01@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/styles.css -w",
-    "live-server": "live-server"
+    "sass": "node-sass sass/index.scss css/styles.css -w",
+    "serve": "live-server",
+    "dev": "concurrently \"sass\" \"serve\""
   },
   "devDependencies": {
+    "concurrently": "^3.6.0",
     "node-sass": "^4.9.2"
   },
   "dependencies": {
