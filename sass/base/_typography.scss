@@ -28,19 +28,11 @@ body {
 }
 
 .heading-secondary {
-  background-image: linear-gradient(
-    to right,
-    $color-primary-light,
-    $color-primary-dark
-  );
-  color: transparent;
-  display: inline-block;
+  @include gradient-text;
   font-size: 3.5rem;
   font-weight: 700;
   text-transform: uppercase;
   transition: all 0.2s;
-
-  -webkit-background-clip: text;
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);

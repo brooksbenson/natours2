@@ -8,7 +8,7 @@
   "scripts": {
     "sass": "node-sass sass/index.scss css/styles.css -w",
     "serve": "live-server",
-    "dev": "concurrently \"sass\" \"serve\""
+    "dev": "concurrently \"yarn sass\" \"yarn serve\""
   },
   "devDependencies": {
     "concurrently": "^3.6.0",
