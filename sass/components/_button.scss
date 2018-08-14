@@ -1,4 +1,5 @@
 .btn {
+  &,
   &:link,
   &:visited {
     border-radius: 10rem;
@@ -20,7 +21,9 @@
     }
   }
 
+  &:focus,
   &:active {
+    outline: none;
     box-shadow: 0 0.5rem 0.2rem rgba($color-black, 0.2);
     transform: translateY(1px);
   }

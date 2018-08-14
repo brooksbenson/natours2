@@ -1,5 +1,5 @@
 .story {
-  background-color: $color-white;
+  background-color: rgba($color-white, 0.6);
   border-radius: 3px;
   box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
   font-size: $default-font-size;
@@ -10,11 +10,11 @@
   width: 75%;
 
   &__shape {
-    background-color: yellowgreen;
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     float: left;
     height: 15rem;
+    position: relative;
     -webkit-shape-outside: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
@@ -22,10 +22,37 @@
   }
 
   &__img {
+    backface-visibility: hidden;
     height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all 0.5s;
   }
 
   &__text {
     transform: skewX(12deg);
+  }
+
+  &__caption {
+    backface-visibility: hidden;
+    color: $color-white;
+    font-size: 1.7rem;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 50%;
+    transform: translate(-50%, 20%);
+    transition: all 0.5s;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    filter: blur(3px) brightness(80%);
+    transform: translateX(-4rem) scale(1);
   }
 }
