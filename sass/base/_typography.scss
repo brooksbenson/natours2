@@ -3,7 +3,6 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  padding: 3rem;
 }
 
 .heading-primary {
@@ -17,13 +16,23 @@ body {
     font-size: 6rem;
     font-weight: 400;
     letter-spacing: 3.5rem;
+
+    @include respond(phone) {
+      font-size: 5rem;
+      letter-spacing: 1rem;
+    }
   }
+
   &--sub {
     animation: moveInRight 1s ease-out;
     display: block;
     font-size: 2rem;
     font-weight: 300;
     letter-spacing: 1.75rem;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
   }
 }
 
