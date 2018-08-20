@@ -1,9 +1,21 @@
+$width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;
+
 .row {
   margin: 0 auto;
-  max-width: $grid-width;
+  max-width: $width;
+  @include respond(tabPort) {
+    padding: 0 3rem;
+    max-width: 55rem;
+  }
 
   &:not(:last-child) {
-    margin-bottom: $grid-vert-gutter;
+    margin-bottom: $gutter-vertical;
+    @include respond(tabPort) {
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
   @include clearfix;
@@ -12,32 +24,40 @@
     float: left;
 
     &:not(:last-child) {
-      margin-right: $grid-horz-gutter;
+      margin-right: $gutter-horizontal;
+      @include respond(tabPort) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    @include respond(tabPort) {
+      width: 100% !important;
     }
   }
 
   .col-1-of-2 {
-    width: calc((100% - #{$grid-horz-gutter}) / 2);
+    width: calc((100% - #{$gutter-horizontal}) / 2);
   }
   .col-1-of-3 {
-    width: calc((100% - #{$grid-horz-gutter} * 2) / 3);
+    width: calc((100% - #{$gutter-horizontal} * 2) / 3);
   }
   .col-2-of-3 {
     width: calc(
-      (((100% - #{$grid-horz-gutter} * 2) / 3) * 2) + #{$grid-horz-gutter}
+      (((100% - #{$gutter-horizontal} * 2) / 3) * 2) + #{$gutter-horizontal}
     );
   }
   .col-1-of-4 {
-    width: calc((100% - #{$grid-horz-gutter} * 3) / 4);
+    width: calc((100% - #{$gutter-horizontal} * 3) / 4);
   }
   .col-2-of-4 {
     width: calc(
-      (((100% - #{$grid-horz-gutter} * 3) / 4) * 2) + #{$grid-horz-gutter}
+      (((100% - #{$gutter-horizontal} * 3) / 4) * 2) + #{$gutter-horizontal}
     );
   }
   .col-3-of-4 {
     width: calc(
-      (((100% - #{$grid-horz-gutter} * 3) / 4) * 3) + #{$grid-horz-gutter} * 2
+      (((100% - #{$gutter-horizontal} * 3) / 4) * 3) + #{$gutter-horizontal} * 2
     );
   }
 }

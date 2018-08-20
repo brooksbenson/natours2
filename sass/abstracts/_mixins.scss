@@ -38,7 +38,7 @@
   }
 
   @if $bp == tabPort {
-    @media (max-width: 56.25em) {
+    @media (max-width: 68.75em) {
       // 900px
       @content;
     }

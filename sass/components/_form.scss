@@ -48,6 +48,10 @@
   &__radio-group {
     display: inline-block;
     width: 49%;
+    @include respond(tabPort) {
+      margin-bottom: 2rem;
+      width: 100%;
+    }
   }
 
   &__radio-input {
