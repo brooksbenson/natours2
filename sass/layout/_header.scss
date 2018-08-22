@@ -4,13 +4,37 @@
       rgba($color-primary-light, 0.8),
       rgba($color-primary-dark, 0.8)
     ),
-    url(../img/hero.jpg);
+    url(../img/hero-small.jpg);
   background-position: top;
   background-size: cover;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-  height: 95vh;
+  height: 85vh;
   position: relative;
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    height: 95vh;
+  }
+
+  // Big Hero Image Logic
+  @media (min-resolution: 192dpi) and (min-width: 600px),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em) {
+    background-image: linear-gradient(
+        to bottom right,
+        rgba($color-secondary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(../img/hero.jpg);
+  }
+
+  @include respond(desktop) {
+    background-image: linear-gradient(
+        to bottom right,
+        rgba($color-tertiary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(../img/hero.jpg);
+  }
 
   @include respond(tabPort) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
